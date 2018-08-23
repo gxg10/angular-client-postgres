@@ -7,23 +7,23 @@ import { CustomerDetailsComponent } from '../customer-details/customer-details.c
 import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
-	{
-		path: 'customers',
-		component: CustomerComponent
-	},
-	{
-		path: 'customer/add',
-		component: AddCustomerComponent
-	},
-	{
-		path: 'customers/:id',
-		component: CustomerDetailsComponent
-	},
-	{
-		path: '',
-		redirectTo: 'customers',
-		pathMatch: 'full'
-	},
+   { 
+     path: 'customers', 
+     component: CustomerComponent 
+   },
+   { 
+     path: 'customer/add', 
+     component: AddCustomerComponent 
+   },
+   { 
+     path: 'customers/:id', 
+     component: CustomerDetailsComponent 
+   },
+   { 
+     path: '', 
+     redirectTo: 'customers', 
+     pathMatch: 'full'
+   }, 
 ];
 
 @NgModule({

@@ -7,23 +7,23 @@ import { CustomerService } from '../services/customer.service';
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
-export class CustomerComponent implements OnInit {
-
-	customers: Customer[];
-
-  constructor(private customerService: CustomerService) { }
-
+export class CustomerComponent  implements OnInit {
+ 
+  customers: Customer[];
+ 
+  constructor(private customerService: CustomerService) {}
+ 
   ngOnInit(): void {
-  	this.getCustomers();
+     this.getCustomers();
   }
-
-  getCustomers(){
-  	return this.customerService.getCustomers()
-  	.subscribe(
-  	customers =>{
-  	console.log(customers);
-  	this.customers = customers
-  	}
-  	);
-  }
+ 
+  getCustomers() {
+    return this.customerService.getCustomers()
+               .subscribe(
+                 customers => {
+                  console.log(customers);
+                  this.customers = customers
+                 }
+                );
+ }
 }

@@ -11,23 +11,23 @@ import { Location } from '@angular/common';
   styleUrls: ['./customer-details.component.css']
 })
 export class CustomerDetailsComponent implements OnInit {
-
-	customer = new Customer() ;
-	submitted = false;
-	message: string;
-
+ 
+  customer = new Customer() ;
+  submitted = false;
+  message: string;
+ 
   constructor(
-  	private customerService: CustomerService,
-  	private route: ActivatedRoute,
-  	private location: Location
-  ) { }
+    private customerService: CustomerService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-  const id = +this.route.snapshot.paramMap.get('id');
-  this.customerService.getCustomer(id)
-  .subscribe(customer => this.customer = customer);
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.customerService.getCustomer(id)
+      .subscribe(customer => this.customer = customer);
   }
-
+ 
   update(): void {
     this.submitted = true;
     this.customerService.updateCustomer(this.customer)

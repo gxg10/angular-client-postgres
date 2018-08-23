@@ -9,16 +9,16 @@ import { Location } from '@angular/common';
   templateUrl: './add-customer.component.html',
   styleUrls: ['./add-customer.component.css']
 })
-export class AddCustomerComponent implements OnInit {
-
-	customer = new Customer();
-	submitted = false;
-
+export class AddCustomerComponent{
+ 
+  customer = new Customer();
+  submitted = false;
+ 
   constructor(
-  private customerService: CustomerService,
-  private location: Location
+    private customerService: CustomerService,
+    private location: Location
   ) { }
-
+ 
   newCustomer(): void {
     this.submitted = false;
     this.customer = new Customer();
